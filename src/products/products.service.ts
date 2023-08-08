@@ -110,6 +110,7 @@ export class ProductsService {
     const { images, ...toUpdate } = updateProductDto;
 
     //*necesitamos del id porque en el dto no lo colocamos, es diferente como lo hacen en graphql usando inputs
+    //? el preload busca por el id y si lo encuentra carga toda la entidad
     const product = await this.productRepository.preload({ id, ...toUpdate });
 
     if ( !product ) throw new NotFoundException(`Product with id: ${ id } not found`);
