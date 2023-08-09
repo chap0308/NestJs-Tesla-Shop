@@ -20,7 +20,7 @@ import { Product, ProductImage } from './entities';
   //* por defecto los dtos y types se pueden usar sin la necesidad de ser exportardos
   exports: [
     ProductsService,//* pero los controllers o services sí necesitan ser exportados
-    TypeOrmModule,//* en caso de que alguien quiere usar los entities o inyectar el Respository
+    TypeOrmModule,//* en caso de que alguien quiere usar los entities de esta carpeta o inyectar el Respository
   ]
 })
 export class ProductsModule {}
