@@ -25,7 +25,7 @@ export class JwtStrategy extends PassportStrategy( Strategy ) {
     }
 
     //*LOGICA PARA LA AUTORIZACION DEL JWT
-    
+    //! Esta funcion validate se ejecuta cuando usamos el @UseGuards()
     async validate( payload: JwtPayload ): Promise<User> {
         
         const { id } = payload;

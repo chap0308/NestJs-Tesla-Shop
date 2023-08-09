@@ -43,7 +43,8 @@ export class AuthController {
   //*solo se pueden entrar a estas rutas con el JWT en postman
   @Get('private')//? localhost:3000/api/auth/private y luego en postman: Authorization: "Bearer token" y colocar el token que se genera usando POST de la funcion login o create
   //*GUARD: Usados para permitir o prevenir acceso a una ruta.
-  @UseGuards( AuthGuard() )
+  @UseGuards( AuthGuard() )//* Aqui se usa el guard de passport, que es el que nos permite verificar si el JWT es valido.
+  //! En otras palabras, este Guard ejectuta la funcion validate de jwt.strategy
   testingPrivateRoute(
     @Req() request: Express.Request,
     @GetUser() user: User,//*user es lo que retorna en el decorador y lo que está adentro como parametro es la "data". La data se puede ver en el decorador
