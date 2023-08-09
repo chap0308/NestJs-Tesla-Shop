@@ -11,7 +11,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy ],//**COLOCAR COMO PROVIDER EL JWT
+  providers: [AuthService, JwtStrategy ],//* COLOCAR COMO PROVIDER EL JWT, ya que lo creamos manualmente. Es el mismo nombre de la clase creada en el archivo strategies
   imports: [
     ConfigModule,
 
@@ -19,7 +19,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 
     PassportModule.register({ defaultStrategy: 'jwt' }),
 
-    //*JWT
+    //! JWT: Dice como firma, autentica y como verifica los tokens
     JwtModule.registerAsync({
       imports: [ ConfigModule ],
       inject: [ ConfigService ],

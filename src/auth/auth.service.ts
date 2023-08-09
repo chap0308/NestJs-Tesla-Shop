@@ -84,7 +84,7 @@ export class AuthService {
 
 
   
-  private getJwtToken( payload: JwtPayload ) {
+  private getJwtToken( payload: JwtPayload ) {//? JwtPayload es un type que solo acepta id
 
     const token = this.jwtService.sign( payload );
     return token;

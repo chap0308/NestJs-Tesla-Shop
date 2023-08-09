@@ -18,12 +18,14 @@ export class JwtStrategy extends PassportStrategy( Strategy ) {
     ) {
 
         super({
+            //! llave para firmar los tokens
             secretOrKey: configService.get('JWT_SECRET'),
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
         });
     }
 
     //*LOGICA PARA LA AUTORIZACION DEL JWT
+    
     async validate( payload: JwtPayload ): Promise<User> {
         
         const { id } = payload;
