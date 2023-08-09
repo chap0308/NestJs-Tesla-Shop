@@ -14,11 +14,13 @@ import { Product, ProductImage } from './entities';
   providers: [ProductsService],
   imports: [
     TypeOrmModule.forFeature([ Product, ProductImage ]),//*ES NECESARIO PARA CADA CREAR CADA TABLA DE NUESTRAS ENTIDADES
+    //! para usar un controller o service de otro modulo se necesita importar el MODULO y ser exportado de su propio modulo
     AuthModule,//*IMPORTANTE IMPORTAR SI QUEREMOS USAR EL DECORADOR Auth()
   ],
+  //* por defecto los dtos y types se pueden usar sin la necesidad de ser exportardos
   exports: [
-    ProductsService,
-    TypeOrmModule,
+    ProductsService,//* pero los controllers o services sí necesitan ser exportados
+    TypeOrmModule,//* en caso de que alguien quiere usar los entities o inyectar el Respository
   ]
 })
 export class ProductsModule {}
