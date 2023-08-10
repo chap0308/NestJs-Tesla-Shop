@@ -9,7 +9,7 @@ import { SeedService } from './seed.service';
 
 @ApiTags('Seed')//?esto es para la documentacion
 @Controller('seed')
-// @Auth( ValidRoles.admin )//*Podriamos colocarlo despues del controlador, así todos los endpoints necesitarian el jwt
+// @Auth( ValidRoles.admin )//! Podriamos colocarlo antes de la clase y así todos los endpoints estarían seguros y necesitarian el jwt
 export class SeedController {
   constructor(private readonly seedService: SeedService) {}
   //*ENDPOINTS:
