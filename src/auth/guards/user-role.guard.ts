@@ -25,6 +25,7 @@ export class UserRoleGuard implements CanActivate {
     //!Pero sí necesita de un token válido para ejecutarlo. Para obtener un token, necesitas ser un usuario.
     if ( !validRoles ) return true;
     if ( validRoles.length === 0 ) return true;
+    //! si no hay ningun rol, entonces ya no obtendriamos el user.
     
     const req = context.switchToHttp().getRequest();
     const user = req.user as User;

@@ -35,3 +35,13 @@ y luego colocar en el main:
 
 # WEB SOCKETS:
 - yarn add @nestjs/websockets @nestjs/platform-socket.io
+
+------------------
+
+## EL @PARAM ES LO QUE VA EN UN LA URL, PUEDE SER UN ID O UN VALOR, PERO NORMALMENTE ES UN ":ID". ADEMAS, PUEDE O NO ESTAR EN UN GET, PERO SI EN UN DELETE
+
+## EL @BODY SIEMPRE VIENE EN UN PATCH Y POST
+
+----------------------
+
+## Para obtener el usuario que está conectado, son varias autenticaciones: jwt.strategy.ts, luego user-role.guard y finalmente get-user.decorator.ts
