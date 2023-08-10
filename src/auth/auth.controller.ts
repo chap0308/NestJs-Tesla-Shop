@@ -45,7 +45,7 @@ export class AuthController {
   //*GUARD: Usados para permitir o prevenir acceso a una ruta.
   @UseGuards( AuthGuard() )//* Aqui se usa el guard de passport, que es el que nos permite verificar si el JWT es valido.
   //! En otras palabras, este Guard ejectuta la funcion validate de jwt.strategy
-  testingPrivateRoute(
+  testingPrivateRoute(//? este es el nombre de la funcion
     @Req() request: Express.Request,
     @GetUser() user: User,//*user es lo que retorna en el decorador y lo que está adentro como parametro es la "data". La data se puede ver en el decorador
     @GetUser('email') userEmail: string,
