@@ -27,7 +27,7 @@ export class UserRoleGuard implements CanActivate {
     if ( validRoles.length === 0 ) return true;
     //! si no hay ningun rol, entonces ya no obtendriamos el user.
     
-    const req = context.switchToHttp().getRequest();
+    const req = context.switchToHttp().getRequest();//! lee el request(de jwt.strategy.ts) y lo establece para que facilmente obtengamos el usuario
     const user = req.user as User;
 
     if ( !user ) 

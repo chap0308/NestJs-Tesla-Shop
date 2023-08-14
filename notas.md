@@ -45,3 +45,16 @@ y luego colocar en el main:
 ----------------------
 
 ## Para obtener el usuario que está conectado, son varias autenticaciones: jwt.strategy.ts, luego user-role.guard y finalmente get-user.decorator.ts
+
+------------------------
+## EN PATCH(":ID")
+## El @Param sería como una variable que siempre debe venir en graphql y el @Body sería como el input de los @Args que puede o no venir en graphql. NEST+GRAPHQL: SECCION 7 - 93.
+
+-----------------------
+
+## Para poder usar las variables de entorno en nuestros servicios, controladores o resolvers. Importamos en el module
+imports: [
+    ConfigModule
+  ]
+
+## PARA ENTENDER MÁS SOBRE LOS MODULOS, VER seed/seed.service.ts de Nest+Graphql/03-anyList

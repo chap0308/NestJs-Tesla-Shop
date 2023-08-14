@@ -13,7 +13,7 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      forbidNonWhitelisted: true,
+      forbidNonWhitelisted: true,//*esto sirve para que no nos envien más informacion de la que esperamos en un REST Tradicional.
       //*podemos usar esto o tambien la otra manera (pagination.dto)
       // transform: true,//*estos dos son para que los datos que se envian al servidor sean del mismo tipo que los datos que se reciben del servidor( datos de los dtos, por ejemplo el de la paginacion )
       // transformOptions: {

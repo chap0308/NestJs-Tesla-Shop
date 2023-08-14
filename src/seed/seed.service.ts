@@ -10,6 +10,7 @@ import { User } from '../auth/entities/user.entity';
 export class SeedService {
 
   constructor(
+    //! la diferencia entre estos dos clases importadas es el Respository. En el primero usamos los metodos de esa misma clase, pero el segundo hacemos consultas usando TypeORM
     private readonly productsService: ProductsService,
     //*para usar el repositorio de usuarios
     @InjectRepository( User )

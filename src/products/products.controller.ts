@@ -52,7 +52,7 @@ export class ProductsController {
   @Patch(':id')
   @Auth( ValidRoles.admin )//*A pesar de estar auntenticado, solo los que tengan el rol de admin podrán ejecutarlo. 
   update(
-    @Param('id', ParseUUIDPipe ) id: string, 
+    @Param('id', ParseUUIDPipe ) id: string, //? el id siempre viene en la url y tambien es necesario para actualizar un producto
     @Body() updateProductDto: UpdateProductDto,
     @GetUser() user: User,//! el user lo obtenemos del decorador @Auth
   ) {
